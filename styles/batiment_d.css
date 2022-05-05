@@ -1,0 +1,52 @@
+body {
+    background-image: url(../images/batd_horiz_clair.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+@media (orientation: portrait) {
+    body {
+        background-image: url(../images/batd_vertic_clair.jpg);
+    }
+}
+
+
+:root {
+    --largeur: 50vw;
+    --hauteur_paysage: calc(var(--largeur) * 1200 / 1920);
+    --hauteur_portrait: calc(var(--largeur) * 1920 / 1200);
+}
+
+#illustration {
+
+    width: var(--largeur);
+    height: var(--largeur);
+    border: solid black 1px;
+    float: right;
+    background-image: url(../images/batd_carre.jpg);
+    background-size: 100%;
+}
+
+#illustration p {
+    padding: 1em;
+    margin: 0;
+    color: white;
+}
+
+@media (max-aspect-ratio: 3/4) {
+    #illustration {
+        height: var(--hauteur_portrait);
+        background-image: url(../images/batd_vertic.jpg);
+    }
+    
+}
+
+@media (min-aspect-ratio: 4/3) {
+    #illustration {
+        height: var(--hauteur_paysage);
+        background-image: url(../images/batd_horiz.jpg);
+    }
+    
+}
